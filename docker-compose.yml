@@ -8,3 +8,11 @@ services:
         ports:
             - 8080:8080 
             - 9998:9998
+        volumes:
+            - ./files/
+    api:
+        image: openresty/openresty:alpine
+        container_name: api
+        network_mode: host
+        ports:
+            - "3000:3000"

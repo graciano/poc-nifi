@@ -1,8 +1,9 @@
 import faker from 'faker';
+import { v4 as uuid } from 'uuid';
 import { promises as fs } from 'fs';
 
 const users = [];
-const FILE_NAME = 'users.csv';
+const FILE_PATH = `files/users-${uuid()}.csv`;
 
 const csvUserParse = ({ name, city }) => [name, city].join(',');
 
@@ -15,6 +16,6 @@ const csvUserParse = ({ name, city }) => [name, city].join(',');
 
 (async () => {
   const csvString = users.map(csvUserParse).join('\r\n');
-  await fs.writeFile(FILE_NAME, csvString);
-  console.log(`${users.length} users in file ${FILE_NAME}`);
+  await fs.writeFile(FILE_PATH, csvString);
+  console.log(`${users.length} users in file ${FILE_PATH}`);
 })();
