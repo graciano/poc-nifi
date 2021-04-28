@@ -6,13 +6,15 @@
   "dependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.13.16",
+    "express": "^4.17.1",
     "faker": "^5.5.3"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.13.8"
   },
   "scripts": {
-    "file": "./babel-node.sh tasks/generateFile.js",
+    "api": "babel api/index.js -o dist/api.js && node dist/api.js",
+    "file": "babel tasks/generateFile.js -o dist/generateFile.js && node dist/generateFile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
