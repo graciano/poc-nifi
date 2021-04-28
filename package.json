@@ -1,0 +1,28 @@
+{
+  "name": "poc-nifi",
+  "version": "1.0.0",
+  "description": "prova de conceito nifi em um data flow legado baseado em microsserviços",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "faker": "^5.5.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8"
+  },
+  "scripts": {
+    "file": "./babel-node.sh tasks/generateFile.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graciano/poc-nifi.git"
+  },
+  "author": "Matheus Graciano <oi@graciano.me>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/graciano/poc-nifi/issues"
+  },
+  "homepage": "https://github.com/graciano/poc-nifi#readme"
+}
