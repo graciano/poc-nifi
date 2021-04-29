@@ -15,7 +15,8 @@ const csvUserParse = ({ name, city }) => [name, city].join(',');
 });
 
 (async () => {
+  const csvHead = Object.keys(users[0]).join(',');
   const csvString = users.map(csvUserParse).join('\r\n');
-  await fs.writeFile(FILE_PATH, csvString);
+  await fs.writeFile(FILE_PATH, `${csvHead}\r\n${csvString}`);
   console.log(`${users.length} users in file ${FILE_PATH}`);
 })();

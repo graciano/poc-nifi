@@ -9,7 +9,7 @@ services:
             - 8080:8080 
             - 9998:9998
         volumes:
-            - ./files/
+            - ./files/:/nifi/files/
     api:
         image: openresty/openresty:alpine
         container_name: api
