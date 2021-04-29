@@ -4,15 +4,26 @@ services:
         container_name: poc_nifi
         image: apache/nifi:1.11.4
         user: root
-        network_mode: bridge
         ports:
             - 8080:8080 
             - 9998:9998
         volumes:
             - ./files/:/nifi/files/
+        networks:
+            - app-network
     api:
-        image: openresty/openresty:alpine
+        image: mhart/alpine-node:16
         container_name: api
-        network_mode: host
+        user: root
         ports:
             - "3000:3000"
+        networks:
+            - app-network
+        volumes:
+            - .:/usr/app/
+            - /usr/app/api/log
+            - ./node_modules:/usr/app/node_modules
+        command: node /usr/app/api/index.js
+networks:
+    app-network:
+        driver: bridge
