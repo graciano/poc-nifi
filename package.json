@@ -14,7 +14,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.13.8"
   },
   "scripts": {
-    "api": "babel api/index.js -o dist/api.js && node dist/api.js",
     "file": "babel tasks/generateFile.js -o dist/generateFile.js && node dist/generateFile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
