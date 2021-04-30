@@ -7,7 +7,7 @@ const FILE_PATH = `files/users-${uuid()}.csv`;
 
 const csvUserParse = ({ name, city }) => [name, city].join(',');
 
-[...Array(50)].forEach(() => {
+[...Array(50_000)].forEach(() => {
   users.push({
     name: faker.name.firstName(),
     city: faker.address.city()
