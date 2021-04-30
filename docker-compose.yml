@@ -21,9 +21,9 @@ services:
             - app-network
         volumes:
             - .:/usr/app/
-            - /usr/app/api/log
             - ./node_modules:/usr/app/node_modules
-        command: node /usr/app/api/index.js
+        working_dir: /usr/app/
+        command: npm run api
 networks:
     app-network:
         driver: bridge
